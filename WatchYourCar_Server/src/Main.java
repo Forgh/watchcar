@@ -11,7 +11,7 @@ import jssc.SerialPortList;
 public class Main {
 
     public static void main(String[] args) {
-	    	try {
+	    try {
 	    	// Init server
 	    	ServerSocket serv_soc;
 			serv_soc = new ServerSocket(6020);
@@ -50,10 +50,10 @@ public class Main {
 		        		serialPort.writeBytes("2".getBytes());
 		        	}
 		        	else if (request.equals("drift back right")) {
-		        		serialPort.writeBytes("3".getBytes());
+		        		serialPort.writeBytes("1".getBytes());
 		        	}
 		        	else if (request.equals("drift back left")) {
-		        		serialPort.writeBytes("1".getBytes());
+		        		serialPort.writeBytes("3".getBytes());
 		        	}
 		        	else if(request.equals("drift left")) {
 		        		serialPort.writeBytes("7".getBytes());
@@ -79,6 +79,7 @@ public class Main {
 	        serialPort.closePort();
 	        ins.close();
 	        soc.close();
+	        serv_soc.close();
 	    }
         catch (SerialPortException e) {
         	System.out.println("Error while opening the serial port.");

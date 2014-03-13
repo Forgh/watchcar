@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
 		Intent intent = getIntent();
 		String address = intent.getStringExtra(AddressActivity.EXTRA_MESSAGE);
 		
-		// Alows to use sockets without StrictMode errors
+		// Allows to use sockets without StrictMode errors
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 		
