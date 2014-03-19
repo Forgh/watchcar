@@ -108,12 +108,12 @@ public class MainActivity extends Activity {
 	
 	@Override
 	public void onDestroy() {
-		super.onDestroy();
 		this.outs.close();
 		try {
 			this.soc.close();
 		} catch (IOException e) {
 			Log.d("Main activity","The connection to server could not be closed");
 		}
+		super.onDestroy();
 	}
 }
