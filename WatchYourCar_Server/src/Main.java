@@ -30,7 +30,7 @@ public class Main {
 	        serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_NONE);
 	        
 	        int i = 0;
-	        while (i < 1) {
+	        while (i < 100000) {
 	        	String request = ins.readLine();
 	        	System.out.println("Request :"+request);
 	        	if (request != null) {
