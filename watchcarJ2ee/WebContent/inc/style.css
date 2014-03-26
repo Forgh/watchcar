@@ -1,0 +1,24 @@
+/* Général ------------------------------------------------------------------------------------- */
+
+body, p, legend, label, input {
+    font: normal 8pt verdana, helvetica, sans-serif;
+}
+
+#centeredCommands{
+	width:320px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#rotate_right{
+	float:right;
+}
+
+.rightleft{
+	margin-bottom: 15px;
+}
+.centering{
+	width:285px;
+	margin-left:auto;
+	margin-right:auto;
+}
