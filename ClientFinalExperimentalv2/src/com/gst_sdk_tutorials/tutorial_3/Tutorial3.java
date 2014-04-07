@@ -238,17 +238,17 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback, Senso
             
             if(x < posDepX-1){
             	if(y < posDepY-1){
-            		if (!lastCommand.equals("drift left")) {
-            			outs.println("drift left");
+            		if (!lastCommand.equals("left")) {
+            			outs.println("left");
             			Log.d("Main activity","We are drifting left by rotation");
-            			lastCommand = "drift left";
+            			lastCommand = "left";
             		}
             	}
             	else if(y > posDepY+1){
-            		if (!lastCommand.equals("drift right")) {
-	            		outs.println("drift right");
+            		if (!lastCommand.equals("right")) {
+	            		outs.println("right");
 	            		Log.d("Main activity","We are drifting right by rotation");
-	            		lastCommand = "drift right";
+	            		lastCommand = "right";
             		}
             	}
             	else {
@@ -285,18 +285,18 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback, Senso
             }
             
             else if(y < posDepY-1){
-            	if (!lastCommand.equals("left")) {
-	            	outs.println("left");
+            	if (!lastCommand.equals("rotate left")) {
+	            	outs.println("rotate left");
 	            	Log.d("Main activity","We are turning left by rotation");
-	            	lastCommand = "left";
+	            	lastCommand = "rotate left";
             	}
             }
             
             else if(y > posDepY+1){
-            	if (!lastCommand.equals("right")) {
-	            	outs.println("right");
+            	if (!lastCommand.equals("rotate right")) {
+	            	outs.println("rotate right");
 	            	Log.d("Main activity","We are turning right by rotation");
-	            	lastCommand = "right";
+	            	lastCommand = "rotate right";
             	}
             }
             
