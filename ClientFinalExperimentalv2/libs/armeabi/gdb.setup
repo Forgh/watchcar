@@ -1,0 +1,2 @@
+set solib-search-path ./obj/local/armeabi
+directory /home/kenairod/Documents/android-ndk-r9d/platforms/android-16/arch-arm/usr/include jni /home/kenairod/Documents/android-ndk-r9d/sources/cxx-stl/system /home/kenairod/Documents/gstreamer-sdk-android-arm-debug-2013.6//include/gstreamer-0.10 /home/kenairod/Documents/gstreamer-sdk-android-arm-debug-2013.6//include/glib-2.0 /home/kenairod/Documents/gstreamer-sdk-android-arm-debug-2013.6//lib/glib-2.0/include /home/kenairod/Documents/gstreamer-sdk-android-arm-debug-2013.6//include/libxml2
