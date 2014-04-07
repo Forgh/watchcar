@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.gst_sdk_tutorials.tutorial_3.GStreamerSurfaceView
+        android:id="@+id/surface_video"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1.00"
+        android:configChanges="orientation|keyboardHidden" />
+    
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+		
+        <ImageButton
+            android:id="@+id/backwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/backward"
+            android:onClick="driveBackward"
+            android:src="@drawable/arrow_down" />
+
+        <ImageButton
+            android:id="@+id/stopButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/backwardButton"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/stop"
+            android:onClick="stopMoving"
+            android:src="@drawable/stop"
+            android:text="@string/stop" />
+
+        <ImageButton
+            android:id="@+id/forwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/stopButton"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/forward"
+            android:onClick="driveForward"
+            android:src="@drawable/arrow_up" />
+
+        <ImageButton
+            android:id="@+id/driftBackRightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/backwardButton"
+            android:contentDescription="@string/driftBackRight"
+            android:onClick="driftBackRight"
+            android:src="@drawable/arrow_downright"
+            android:text="@string/driftBackRight" />
+
+        <ImageButton
+            android:id="@+id/driftBackLeftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/backwardButton"
+            android:contentDescription="@string/driftBackLeft"
+            android:onClick="driftBackLeft"
+            android:src="@drawable/arrow_downleft"
+            android:text="@string/driftBackLeft" />
+
+        <ImageButton
+            android:id="@+id/rightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/driftBackRightButton"
+            android:layout_toRightOf="@id/stopButton"
+            android:contentDescription="@string/right"
+            android:onClick="turnRight"
+            android:src="@drawable/arrow_right"
+            android:text="@string/right" />
+
+        <ImageButton
+            android:id="@+id/driftLeftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/leftButton"
+            android:layout_alignLeft="@+id/leftButton"
+            android:contentDescription="@string/driftLeft"
+            android:onClick="driftLeft"
+            android:src="@drawable/arrow_upleft"
+            android:text="@string/driftLeft" />
+
+
+
+        <ImageButton
+            android:id="@+id/leftButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/driftBackLeftButton"
+            android:layout_toLeftOf="@id/stopButton"
+            android:contentDescription="@string/left"
+            android:onClick="turnLeft"
+            android:src="@drawable/arrow_left"
+            android:text="@string/left" />
+
+        <ImageButton
+            android:id="@+id/driftRightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rightButton"
+            android:layout_alignLeft="@+id/rightButton"
+            android:contentDescription="@string/driftRight"
+            android:onClick="driftRight"
+            android:src="@drawable/arrow_upright"
+            android:text="@string/driftRight" />
+        
+        <Button android:id="@+id/changeHandButton"
+		    android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/forwardButton"
+            android:text="@string/change_hand"
+            android:onClick="changeLayout"/>
+
+    </RelativeLayout>
+   
+</LinearLayout>

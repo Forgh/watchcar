@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Watch Your Car</string>
+    
+    <string name="edit_message">IP Address of the server</string>
+    <string name="defaultHostName">172.23.198.240</string>
+    <string name="button_send">Connect</string>
+    
+    <string name="change_hand">Change Hand</string>
+    
+    <string name="forward">Forward</string>
+    <string name="backward">Backward</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="stop">Stop</string>
+	<string name="driftBackRight">Drift back right</string>
+	<string name="driftBackLeft">Drift back left</string>
+	<string name="driftLeft">Drift left</string>
+	<string name="driftRight">Drift right</string>
+	<string name="rotateLeft">Rotate left</string>
+	<string name="rotateRight">Rotate right</string>
+</resources>
