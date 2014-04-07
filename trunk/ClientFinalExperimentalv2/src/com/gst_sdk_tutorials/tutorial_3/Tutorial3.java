@@ -27,7 +27,7 @@ import android.widget.Toast;
 
 import com.gstreamer.GStreamer;
 
-public class Tutorial3 extends Activity implements SurfaceHolder.Callback {
+public class Tutorial3 extends Activity implements SurfaceHolder.Callback, SensorEventListener {
     private native void nativeInit();     // Initialize native code, build pipeline, etc
     private native void nativeFinalize(); // Destroy pipeline and shutdown native code
     private native void nativePlay();     // Set pipeline to PLAYING
@@ -67,7 +67,7 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback {
 		
 		mManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 	    mAccelerometer = mManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-		
+	    mManager.registerListener(this, mAccelerometer, 500);
 		nativeSetIpserver(address);
 		// Allows to use sockets without StrictMode errors
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -325,6 +325,16 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback {
 	protected void onPause() {
 	  super.onPause();
 	  mManager.unregisterListener(mSensorEventListener, mAccelerometer);
+	}
+	@Override
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void onSensorChanged(SensorEvent event) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
