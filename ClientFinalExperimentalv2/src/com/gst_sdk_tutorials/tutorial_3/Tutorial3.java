@@ -48,7 +48,7 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback {
     
     private String lastCommand = "";
     
-    private static boolean hand = false;
+    private static boolean hand = true;
     
     // Called when the activity is first created.
     @Override
@@ -85,15 +85,11 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback {
             return;
         }
 
-        setContentView(R.layout.main_right);
+        //setContentView(R.layout.main_right);
+        changeLayout(this.getCurrentFocus());
+        
 
-        nativePlay();
-
-        SurfaceView sv = (SurfaceView) this.findViewById(R.id.surface_video);
-        SurfaceHolder sh = sv.getHolder();
-        sh.addCallback(this);
-
-        nativeInit();
+        
     }
     
     //When the screen is rotated nothing must change
@@ -166,6 +162,14 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback {
     		hand = true;
     		setContentView(R.layout.main_left);
     	}
+    	
+    	nativePlay();
+
+        SurfaceView sv = (SurfaceView) this.findViewById(R.id.surface_video);
+        SurfaceHolder sh = sv.getHolder();
+        sh.addCallback(this);
+        
+        nativeInit();
     	
     }
     
