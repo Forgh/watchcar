@@ -18,6 +18,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -49,6 +50,8 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback, Senso
     private String lastCommand = "";
     
     private static boolean hand = true;
+    
+    private static boolean rotationMod = false;
     
     // Called when the activity is first created.
     @Override
@@ -88,7 +91,33 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback, Senso
         //setContentView(R.layout.main_right);
         changeLayout(this.getCurrentFocus());
         
-
+        View buttonStop = findViewById(R.id.stopButton);
+    	
+    	View.OnLongClickListener listener = new View.OnLongClickListener() {
+    	    public boolean onLongClick(View v) {
+    	    	Tutorial3.rotationMod = true;
+    	        return true;
+    	    }
+    	};
+    	
+    	View.OnTouchListener listenerRelease = new View.OnTouchListener() {        
+    	    @Override
+    	    public boolean onTouch(View v, MotionEvent event) {
+    	        switch(event.getAction()) {
+    	            case MotionEvent.ACTION_DOWN:
+    	                // PRESSED
+    	                return true; // if you want to handle the touch event
+    	            case MotionEvent.ACTION_UP:
+    	                // RELEASED
+    	            	Tutorial3.rotationMod = true;
+    	                return true; // if you want to handle the touch event
+    	        }
+    	        return false;
+    	    }
+    	};
+    	
+    	buttonStop.setOnLongClickListener(listener);
+    	buttonStop.setOnTouchListener(listenerRelease);
         
     }
     
@@ -236,76 +265,81 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback, Senso
             float x = pEvent.values[0];
             float y = pEvent.values[1];
             
-            if(x < posDepX-1){
-            	if(y < posDepY-1){
-            		if (!lastCommand.equals("left")) {
-            			outs.println("left");
-            			Log.d("Main activity","We are drifting left by rotation");
-            			lastCommand = "left";
-            		}
-            	}
-            	else if(y > posDepY+1){
-            		if (!lastCommand.equals("right")) {
-	            		outs.println("right");
-	            		Log.d("Main activity","We are drifting right by rotation");
-	            		lastCommand = "right";
-            		}
-            	}
-            	else {
-            		if (!lastCommand.equals("forward")) {
-	            		outs.println("forward");
-	            		Log.d("Main activity","We are driving forward by rotation");
-	            		lastCommand = "forward";
-            		}
-            	}
-            }
+            posDepX = x;
+            posDepY = y;
             
-            else if (x > posDepX+1){
-            	if(y < posDepY-1){
-            		if (!lastCommand.equals("drift back left")) {
-	            		outs.println("drift back left");
-	            		Log.d("Main activity","We are drifting back left by rotation");
-	            		lastCommand = "drift back left";
-            		}
-            	}
-            	else if(y > posDepY+1){
-            		if (!lastCommand.equals("drift back right")) {
-	            		outs.println("drift back right");
-	            		Log.d("Main activity","We are drifting back right by rotation");
-	            		lastCommand = "drift back right";
-            		}
-            	}
-            	else {
-            		if (!lastCommand.equals("backward")) {
-	            		outs.println("backward");
-	            		Log.d("Main activity","We are driving backward by rotation");
-	            		lastCommand = "backward";
-            		}
-            	}
-            }
-            
-            else if(y < posDepY-1){
-            	if (!lastCommand.equals("rotate left")) {
-	            	outs.println("rotate left");
-	            	Log.d("Main activity","We are turning left by rotation");
-	            	lastCommand = "rotate left";
-            	}
-            }
-            
-            else if(y > posDepY+1){
-            	if (!lastCommand.equals("rotate right")) {
-	            	outs.println("rotate right");
-	            	Log.d("Main activity","We are turning right by rotation");
-	            	lastCommand = "rotate right";
-            	}
-            }
-            
-            else if (x > posDepX-1 && x < posDepX+1 && y > posDepY-1 && y < posDepY+1) {
-            	if (!lastCommand.equals("stop")) {
-	            	outs.println("stop");
-	            	Log.d("Main activity","We are stopping by rotation");
-	            	lastCommand = "stop";
-            	}
+            if (Tutorial3.rotationMod) {
+	            if(x < posDepX-1){
+	            	if(y < posDepY-1){
+	            		if (!lastCommand.equals("left")) {
+	            			outs.println("left");
+	            			Log.d("Main activity","We are drifting left by rotation");
+	            			lastCommand = "left";
+	            		}
+	            	}
+	            	else if(y > posDepY+1){
+	            		if (!lastCommand.equals("right")) {
+		            		outs.println("right");
+		            		Log.d("Main activity","We are drifting right by rotation");
+		            		lastCommand = "right";
+	            		}
+	            	}
+	            	else {
+	            		if (!lastCommand.equals("forward")) {
+		            		outs.println("forward");
+		            		Log.d("Main activity","We are driving forward by rotation");
+		            		lastCommand = "forward";
+	            		}
+	            	}
+	            }
+	            
+	            else if (x > posDepX+1){
+	            	if(y < posDepY-1){
+	            		if (!lastCommand.equals("drift back left")) {
+		            		outs.println("drift back left");
+		            		Log.d("Main activity","We are drifting back left by rotation");
+		            		lastCommand = "drift back left";
+	            		}
+	            	}
+	            	else if(y > posDepY+1){
+	            		if (!lastCommand.equals("drift back right")) {
+		            		outs.println("drift back right");
+		            		Log.d("Main activity","We are drifting back right by rotation");
+		            		lastCommand = "drift back right";
+	            		}
+	            	}
+	            	else {
+	            		if (!lastCommand.equals("backward")) {
+		            		outs.println("backward");
+		            		Log.d("Main activity","We are driving backward by rotation");
+		            		lastCommand = "backward";
+	            		}
+	            	}
+	            }
+	            
+	            else if(y < posDepY-1){
+	            	if (!lastCommand.equals("rotate left")) {
+		            	outs.println("rotate left");
+		            	Log.d("Main activity","We are turning left by rotation");
+		            	lastCommand = "rotate left";
+	            	}
+	            }
+	            
+	            else if(y > posDepY+1){
+	            	if (!lastCommand.equals("rotate right")) {
+		            	outs.println("rotate right");
+		            	Log.d("Main activity","We are turning right by rotation");
+		            	lastCommand = "rotate right";
+	            	}
+	            }
+	            
+	            else if (x > posDepX-1 && x < posDepX+1 && y > posDepY-1 && y < posDepY+1) {
+	            	if (!lastCommand.equals("stop")) {
+		            	outs.println("stop");
+		            	Log.d("Main activity","We are stopping by rotation");
+		            	lastCommand = "stop";
+	            	}
+	            }
             }
         }
         
