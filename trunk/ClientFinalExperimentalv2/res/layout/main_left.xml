@@ -29,6 +29,7 @@
             android:layout_centerVertical="true"
             android:contentDescription="@string/stop"
             android:onClick="stopMoving"
+            android:longClickable="true"
             android:src="@drawable/stop"
             android:text="@string/stop" />
 
