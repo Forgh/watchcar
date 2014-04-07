@@ -71,7 +71,7 @@
             android:layout_above="@id/driftBackRightButton"
             android:layout_toRightOf="@id/stopButton"
             android:contentDescription="@string/right"
-            android:onClick="turnRight"
+            android:onClick="rotateRight"
             android:src="@drawable/arrow_right"
             android:text="@string/right" />
 
@@ -82,7 +82,7 @@
             android:layout_above="@+id/leftButton"
             android:layout_alignLeft="@+id/leftButton"
             android:contentDescription="@string/driftLeft"
-            android:onClick="driftLeft"
+            android:onClick="turnLeft"
             android:src="@drawable/arrow_upleft"
             android:text="@string/driftLeft" />
 
@@ -95,7 +95,7 @@
             android:layout_above="@id/driftBackLeftButton"
             android:layout_toLeftOf="@id/stopButton"
             android:contentDescription="@string/left"
-            android:onClick="turnLeft"
+            android:onClick="rotateLeft"
             android:src="@drawable/arrow_left"
             android:text="@string/left" />
 
@@ -106,7 +106,7 @@
             android:layout_above="@+id/rightButton"
             android:layout_alignLeft="@+id/rightButton"
             android:contentDescription="@string/driftRight"
-            android:onClick="driftRight"
+            android:onClick="turnRight"
             android:src="@drawable/arrow_upright"
             android:text="@string/driftRight" />
         
