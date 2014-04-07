@@ -27,25 +27,9 @@ app.get('/', function(req, res) {
   });
  
   tcpServer.maxConnections = 1;
- 
+  
   tcpServer.listen(function() {
-    var cmd = 'gst-launch-0.10';
-    var options = null;
-    var args =
-      ['videotestsrc', 'horizontal-speed=1', 'is-live=1',
-      '!', 'video/x-raw-rgb,framerate=30/1',
-      '!', 'ffmpegcolorspace',
-      '!', 'vp8enc', 'speed=2',
-      '!', 'queue2',
-      '!', 'm.', 'audiotestsrc', 'is-live=1',
-      '!', 'audioconvert',
-      '!', 'vorbisenc',
-      '!', 'queue2',
-      '!', 'm.', 'webmmux', 'name=m', 'streamable=true',
-      '!', 'tcpclientsink', 'host=localhost',
-      'port='+tcpServer.address().port];
- 
-    var gstMuxer = child.spawn(cmd, args, options);
+    var gstMuxer = child.spawn("/home/pi/gst-server-raspicam.sh.BACKUP");
  
     gstMuxer.stderr.on('data', onSpawnError);
     gstMuxer.on('exit', onSpawnExit);
