@@ -1,4 +1,4 @@
-package com.gst_sdk_tutorials.tutorial_3;
+package com.watch_your_car.client;
 
 import android.content.Context;
 import android.util.AttributeSet;

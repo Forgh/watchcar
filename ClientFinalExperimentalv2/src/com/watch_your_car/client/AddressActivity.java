@@ -1,4 +1,4 @@
-package com.gst_sdk_tutorials.tutorial_3;
+package com.watch_your_car.client;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -25,7 +25,7 @@ public class AddressActivity extends Activity {
 	}
 	
 	public void launch(View view) {
-		Intent intent = new Intent(this, Tutorial3.class);
+		Intent intent = new Intent(this, MainActivity.class);
 		EditText editText = (EditText) findViewById(R.id.edit_message);
 		String message = editText.getText().toString();
 		intent.putExtra(EXTRA_MESSAGE, message);

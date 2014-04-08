@@ -1,5 +1,5 @@
 /** Automatically generated file. DO NOT MODIFY */
-package com.gst_sdk_tutorials.tutorial_3;
+package com.watch_your_car.client;
 
 public final class BuildConfig {
     public final static boolean DEBUG = true;
