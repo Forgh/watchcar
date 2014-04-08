@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.gst_sdk_tutorials.tutorial_3;
+package com.watch_your_car.client;
 
 public final class R {
     public static final class attr {

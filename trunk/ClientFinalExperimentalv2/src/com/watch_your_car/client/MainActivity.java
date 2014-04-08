@@ -1,4 +1,4 @@
-package com.gst_sdk_tutorials.tutorial_3;
+package com.watch_your_car.client;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -28,7 +28,7 @@ import android.widget.Toast;
 
 import com.gstreamer.GStreamer;
 
-public class Tutorial3 extends Activity implements SurfaceHolder.Callback, SensorEventListener {
+public class MainActivity extends Activity implements SurfaceHolder.Callback, SensorEventListener {
     private native void nativeInit();     // Initialize native code, build pipeline, etc
     private native void nativeFinalize(); // Destroy pipeline and shutdown native code
     private native void nativePlay();     // Set pipeline to PLAYING
@@ -95,7 +95,7 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback, Senso
     	
     	View.OnLongClickListener listener = new View.OnLongClickListener() {
     	    public boolean onLongClick(View v) {
-    	    	Tutorial3.rotationMod = true;
+    	    	MainActivity.rotationMod = true;
     	        return true;
     	    }
     	};
@@ -109,7 +109,7 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback, Senso
     	                return true; // if you want to handle the touch event
     	            case MotionEvent.ACTION_UP:
     	                // RELEASED
-    	            	Tutorial3.rotationMod = true;
+    	            	MainActivity.rotationMod = true;
     	                return true; // if you want to handle the touch event
     	        }
     	        return false;
@@ -183,7 +183,7 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback, Senso
 	}
     
     public void changeLayout(View v) {
-    	if (Tutorial3.hand) {
+    	if (MainActivity.hand) {
     		hand = false;
     		setContentView(R.layout.main_right);
     	}
@@ -268,7 +268,7 @@ public class Tutorial3 extends Activity implements SurfaceHolder.Callback, Senso
             posDepX = x;
             posDepY = y;
             
-            if (Tutorial3.rotationMod) {
+            if (MainActivity.rotationMod) {
 	            if(x < posDepX-1){
 	            	if(y < posDepY-1){
 	            		if (!lastCommand.equals("left")) {
