@@ -53,6 +53,8 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Se
     
     private static boolean rotationMod = false;
     
+    private static boolean mustGetInitialPosition = true;
+    
     // Called when the activity is first created.
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -109,7 +111,8 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Se
     	                return true; // if you want to handle the touch event
     	            case MotionEvent.ACTION_UP:
     	                // RELEASED
-    	            	MainActivity.rotationMod = true;
+    	            	MainActivity.rotationMod = false;
+    	            	MainActivity.mustGetInitialPosition = true;
     	                return true; // if you want to handle the touch event
     	        }
     	        return false;
@@ -265,8 +268,12 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Se
             float x = pEvent.values[0];
             float y = pEvent.values[1];
             
-            posDepX = x;
-            posDepY = y;
+            if(MainActivity.mustGetInitialPosition) {
+            	posDepX = x;
+                posDepY = y;
+                
+                MainActivity.mustGetInitialPosition = false;
+            }
             
             if (MainActivity.rotationMod) {
 	            if(x < posDepX-1){
