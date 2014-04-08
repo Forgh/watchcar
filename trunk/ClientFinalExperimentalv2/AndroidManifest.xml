@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.gst_sdk_tutorials.tutorial_3"
+      package="com.watch_your_car.client"
       android:versionCode="1"
       android:versionName="1.0">
     <uses-sdk
@@ -28,7 +28,7 @@
         </activity>
         
         <activity
-	        android:name=".Tutorial3"
+	        android:name=".MainActivity"
 	        android:label="@string/app_name"
 	        android:parentActivityName=".AddressActivity"
 	        android:configChanges="keyboardHidden|orientation|screenSize"
