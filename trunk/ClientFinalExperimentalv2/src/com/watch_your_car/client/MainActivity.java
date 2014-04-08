@@ -268,14 +268,13 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Se
             float x = pEvent.values[0];
             float y = pEvent.values[1];
             
-            if(MainActivity.mustGetInitialPosition) {
-            	posDepX = x;
-                posDepY = y;
-                
-                MainActivity.mustGetInitialPosition = false;
-            }
-            
             if (MainActivity.rotationMod) {
+            	if(MainActivity.mustGetInitialPosition) {
+                	posDepX = x;
+                    posDepY = y;
+                    
+                    MainActivity.mustGetInitialPosition = false;
+                }
 	            if(x < posDepX-1){
 	            	if(y < posDepY-1){
 	            		if (!lastCommand.equals("left")) {
