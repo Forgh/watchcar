@@ -22,6 +22,9 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -54,6 +57,8 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Se
     private static boolean rotationMod = false;
     
     private static boolean mustGetInitialPosition = true;
+    
+    private View stopButton;
     
     // Called when the activity is first created.
     @Override
@@ -93,35 +98,6 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Se
         //setContentView(R.layout.main_right);
         changeLayout(this.getCurrentFocus());
         
-        View buttonStop = findViewById(R.id.stopButton);
-    	
-    	View.OnLongClickListener listener = new View.OnLongClickListener() {
-    	    public boolean onLongClick(View v) {
-    	    	MainActivity.rotationMod = true;
-    	        return true;
-    	    }
-    	};
-    	
-    	View.OnTouchListener listenerRelease = new View.OnTouchListener() {        
-    	    @Override
-    	    public boolean onTouch(View v, MotionEvent event) {
-    	        switch(event.getAction()) {
-    	            case MotionEvent.ACTION_DOWN:
-    	                // PRESSED
-    	                return true; // if you want to handle the touch event
-    	            case MotionEvent.ACTION_UP:
-    	                // RELEASED
-    	            	MainActivity.rotationMod = false;
-    	            	MainActivity.mustGetInitialPosition = true;
-    	                return true; // if you want to handle the touch event
-    	        }
-    	        return false;
-    	    }
-    	};
-    	
-    	buttonStop.setOnLongClickListener(listener);
-    	buttonStop.setOnTouchListener(listenerRelease);
-        
     }
     
     //When the screen is rotated nothing must change
@@ -154,7 +130,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Se
 
     static {
         System.loadLibrary("gstreamer_android");
-        System.loadLibrary("tutorial-3");
+        System.loadLibrary("watch_your_car-client");
         nativeClassInit();
     }
 
@@ -194,6 +170,44 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Se
     		hand = true;
     		setContentView(R.layout.main_left);
     	}
+    	
+    	
+    	
+    	this.stopButton = findViewById(R.id.stopButton);
+    	
+    	this.stopButton.setOnClickListener(new OnClickListener() {
+        	@Override
+        	public void onClick(View v) {
+        		stopMoving(v);
+        	}
+        	}
+    	);
+    	
+    	this.stopButton.setOnLongClickListener(new OnLongClickListener() {
+    		 @Override
+    		 public boolean onLongClick(View v) {
+    			 MainActivity.rotationMod = true;
+    			 return true;
+    		 }
+    	});
+    	
+    	this.stopButton.setOnTouchListener(new OnTouchListener() {
+    	    @Override
+    	    public boolean onTouch(View v, MotionEvent event) {
+    	    	v.onTouchEvent(event);
+    	    	if (event.getAction() == MotionEvent.ACTION_UP) {
+    	    		if (MainActivity.rotationMod) {
+    	    			MainActivity.rotationMod = false;
+        	    		stopMoving(v);
+                   }
+    	        }
+    	    	return false;
+    	    }
+    	});
+    	
+    	
+    	
+    	
     	
     	nativePlay();
 

@@ -223,8 +223,8 @@ static void *app_function (void *userdata) {
 static void gst_native_init (JNIEnv* env, jobject thiz) {
   CustomData *data = g_new0 (CustomData, 1);
   SET_CUSTOM_DATA (env, thiz, custom_data_field_id, data);
-  GST_DEBUG_CATEGORY_INIT (debug_category, "tutorial-3", 0, "Android tutorial 3");
-  gst_debug_set_threshold_for_name("tutorial-3", GST_LEVEL_DEBUG);
+  GST_DEBUG_CATEGORY_INIT (debug_category, "watch_your_car-client", 0, "Watch Yout Car Client");
+  gst_debug_set_threshold_for_name("watch_your_car-client", GST_LEVEL_DEBUG);
   GST_DEBUG ("Created CustomData at %p", data);
   data->app = (*env)->NewGlobalRef (env, thiz);
   GST_DEBUG ("Created GlobalRef for app object at %p", data->app);
@@ -265,7 +265,7 @@ static jboolean gst_native_class_init (JNIEnv* env, jclass klass) {
     /* We emit this message through the Android log instead of the GStreamer log because the later
      * has not been initialized yet.
      */
-    __android_log_print (ANDROID_LOG_ERROR, "tutorial-3", "The calling class does not implement all necessary interface methods");
+    __android_log_print (ANDROID_LOG_ERROR, "watch_your_car-client", "The calling class does not implement all necessary interface methods");
     return JNI_FALSE;
   }
   return JNI_TRUE;
@@ -318,7 +318,7 @@ static void gst_native_surface_finalize (JNIEnv *env, jobject thiz) {
 	(*env)->ReleaseStringUTFChars(ipAddress, serverIpAddress);
 }*/
 
-JNIEXPORT void JNICALL Java_com_gst_sdk_tutorials_tutorial_3_Tutorial3_nativeSetIpserver(JNIEnv * env, jobject obj, jstring ipAddress)
+JNIEXPORT void JNICALL Java_com_watch_your_car_client_MainActivity_nativeSetIpserver(JNIEnv * env, jobject obj, jstring ipAddress)
 {
 	serverIpAddress = (*env)->GetStringUTFChars(env, ipAddress, 0);
 }
@@ -331,7 +331,7 @@ static JNINativeMethod native_methods[] = {
   { "nativeSurfaceInit", "(Ljava/lang/Object;)V", (void *) gst_native_surface_init},
   { "nativeSurfaceFinalize", "()V", (void *) gst_native_surface_finalize},
   { "nativeClassInit", "()Z", (void *) gst_native_class_init},
-  { "nativeSetIpserver", "(Ljava/lang/String;)V", (void *) Java_com_gst_sdk_tutorials_tutorial_3_Tutorial3_nativeSetIpserver}
+  { "nativeSetIpserver", "(Ljava/lang/String;)V", (void *) Java_com_watch_your_car_client_MainActivity_nativeSetIpserver}
 };
 
 /* Library initializer */
@@ -341,10 +341,10 @@ jint JNI_OnLoad(JavaVM *vm, void *reserved) {
   java_vm = vm;
 
   if ((*vm)->GetEnv(vm, (void**) &env, JNI_VERSION_1_4) != JNI_OK) {
-    __android_log_print (ANDROID_LOG_ERROR, "tutorial-3", "Could not retrieve JNIEnv");
+    __android_log_print (ANDROID_LOG_ERROR, "watch_your_car-client", "Could not retrieve JNIEnv");
     return 0;
   }
-  jclass klass = (*env)->FindClass (env, "com/gst_sdk_tutorials/tutorial_3/Tutorial3");
+  jclass klass = (*env)->FindClass (env, "com/watch_your_car/client/MainActivity");
   (*env)->RegisterNatives (env, klass, native_methods, G_N_ELEMENTS(native_methods));
 
   pthread_key_create (&current_jni_env, detach_current_thread);

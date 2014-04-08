@@ -28,7 +28,6 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:contentDescription="@string/stop"
-            android:onClick="stopMoving"
             android:longClickable="true"
             android:src="@drawable/stop"
             android:text="@string/stop" />
@@ -120,7 +119,7 @@
 
     </RelativeLayout>
     
-    <com.gst_sdk_tutorials.tutorial_3.GStreamerSurfaceView
+    <com.watch_your_car.client.GStreamerSurfaceView
         android:id="@+id/surface_video"
         android:layout_width="0dip"
         android:layout_height="match_parent"
