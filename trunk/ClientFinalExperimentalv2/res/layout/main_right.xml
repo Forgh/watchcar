@@ -15,7 +15,8 @@
     <RelativeLayout
         android:layout_width="0dip"
         android:layout_height="match_parent"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:background="@drawable/zwartevilt" >
 		
         <ImageButton
             android:id="@+id/backwardButton"
@@ -25,7 +26,8 @@
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/backward"
             android:onClick="driveBackward"
-            android:src="@drawable/arrow_down" />
+            android:src="@drawable/arrow_down"
+            android:background="@null" />
 
         <ImageButton
             android:id="@+id/stopButton"
@@ -37,7 +39,8 @@
             android:contentDescription="@string/stop"
             android:longClickable="true"
             android:src="@drawable/stop"
-            android:text="@string/stop" />
+            android:text="@string/stop"
+            android:background="@null" />
 
         <ImageButton
             android:id="@+id/forwardButton"
@@ -47,7 +50,8 @@
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/forward"
             android:onClick="driveForward"
-            android:src="@drawable/arrow_up" />
+            android:src="@drawable/arrow_up"
+            android:background="@null" />
 
         <ImageButton
             android:id="@+id/driftBackRightButton"
@@ -58,7 +62,8 @@
             android:contentDescription="@string/driftBackRight"
             android:onClick="driftBackRight"
             android:src="@drawable/arrow_downright"
-            android:text="@string/driftBackRight" />
+            android:text="@string/driftBackRight"
+            android:background="@null" />
 
         <ImageButton
             android:id="@+id/driftBackLeftButton"
@@ -69,7 +74,8 @@
             android:contentDescription="@string/driftBackLeft"
             android:onClick="driftBackLeft"
             android:src="@drawable/arrow_downleft"
-            android:text="@string/driftBackLeft" />
+            android:text="@string/driftBackLeft"
+            android:background="@null" />
 
         <ImageButton
             android:id="@+id/rightButton"
@@ -80,7 +86,8 @@
             android:contentDescription="@string/right"
             android:onClick="rotateRight"
             android:src="@drawable/arrow_right"
-            android:text="@string/right" />
+            android:text="@string/right"
+            android:background="@null" />
 
         <ImageButton
             android:id="@+id/driftLeftButton"
@@ -91,7 +98,8 @@
             android:contentDescription="@string/driftLeft"
             android:onClick="turnLeft"
             android:src="@drawable/arrow_upleft"
-            android:text="@string/driftLeft" />
+            android:text="@string/driftLeft"
+            android:background="@null" />
 
 
 
@@ -104,7 +112,8 @@
             android:contentDescription="@string/left"
             android:onClick="rotateLeft"
             android:src="@drawable/arrow_left"
-            android:text="@string/left" />
+            android:text="@string/left"
+            android:background="@null" />
 
         <ImageButton
             android:id="@+id/driftRightButton"
@@ -115,14 +124,20 @@
             android:contentDescription="@string/driftRight"
             android:onClick="turnRight"
             android:src="@drawable/arrow_upright"
-            android:text="@string/driftRight" />
+            android:text="@string/driftRight"
+            android:background="@null" />
         
-        <Button android:id="@+id/changeHandButton"
+        <ImageButton android:id="@+id/changeHandButton"
 		    android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/forwardButton"
+            android:layout_centerHorizontal="true"
             android:text="@string/change_hand"
-            android:onClick="changeLayout"/>
+            android:contentDescription="@string/change_hand"
+            android:src="@drawable/change_orientation"
+            android:layout_marginBottom="20dip"
+            android:onClick="changeLayout"
+            android:background="@null"/>
 
     </RelativeLayout>
    
