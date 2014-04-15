@@ -3,19 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:layout_marginTop="100dp" >
+    android:background="@drawable/zwartevilt" >
     
     <EditText android:id="@+id/edit_message"
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:hint="@string/edit_message"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:background="@drawable/ip_field"
+        android:textColor="@color/Neon" />
     
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_send"
-        android:onClick="launch" />
+        android:contentDescription="@string/button_send"
+        android:src="@drawable/connect"
+        android:layout_marginTop="100dp"
+        android:onClick="launch"
+        android:background="@null" />
 
 </LinearLayout>
