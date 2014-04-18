@@ -155,10 +155,16 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Se
 			this.soc = new Socket(address,6020);
 			this.outs = new PrintWriter(new BufferedWriter(new OutputStreamWriter(soc.getOutputStream())), true);
 			outs.println("android");
+			Thread.sleep(1000);
 		} catch (UnknownHostException e) {
 			Log.d("Main activity","Server not found.");
+			e.printStackTrace();
 		} catch (IOException e) {
 			Log.d("Main activity","Error input/output with the server connection.");
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			Log.d("Main activity","Impossible to sleep.");
+			e.printStackTrace();
 		}
 	}
     

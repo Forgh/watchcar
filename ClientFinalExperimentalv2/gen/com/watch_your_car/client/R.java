@@ -15,38 +15,62 @@ public final class R {
     }
     public static final class drawable {
         public static final int arrow_down=0x7f020000;
-        public static final int arrow_downleft=0x7f020001;
-        public static final int arrow_downright=0x7f020002;
-        public static final int arrow_left=0x7f020003;
-        public static final int arrow_right=0x7f020004;
-        public static final int arrow_up=0x7f020005;
-        public static final int arrow_upleft=0x7f020006;
-        public static final int arrow_upright=0x7f020007;
-        public static final int change_orientation=0x7f020008;
-        public static final int connect=0x7f020009;
-        public static final int editbox_background_focus_blue=0x7f02000a;
-        public static final int editbox_background_normal_blue=0x7f02000b;
-        public static final int gst_sdk_icon=0x7f02000c;
-        public static final int ic_launcher=0x7f02000d;
-        public static final int ip_field=0x7f02000e;
-        public static final int rotate_left=0x7f02000f;
-        public static final int rotate_right=0x7f020010;
-        public static final int stop=0x7f020011;
-        public static final int zwartevilt=0x7f020012;
+        public static final int arrow_down_on=0x7f020001;
+        public static final int arrow_downleft=0x7f020002;
+        public static final int arrow_downleft_on=0x7f020003;
+        public static final int arrow_downright=0x7f020004;
+        public static final int arrow_downright_on=0x7f020005;
+        public static final int arrow_left=0x7f020006;
+        public static final int arrow_left_on=0x7f020007;
+        public static final int arrow_right=0x7f020008;
+        public static final int arrow_right_on=0x7f020009;
+        public static final int arrow_up=0x7f02000a;
+        public static final int arrow_up_on=0x7f02000b;
+        public static final int arrow_upleft=0x7f02000c;
+        public static final int arrow_upleft_on=0x7f02000d;
+        public static final int arrow_upright=0x7f02000e;
+        public static final int arrow_upright_on=0x7f02000f;
+        public static final int change_orientation=0x7f020010;
+        public static final int change_orientation_on=0x7f020011;
+        public static final int connect=0x7f020012;
+        public static final int connect_on=0x7f020013;
+        public static final int connection=0x7f020014;
+        public static final int down=0x7f020015;
+        public static final int downleft=0x7f020016;
+        public static final int downright=0x7f020017;
+        public static final int editbox_background_focus_blue=0x7f020018;
+        public static final int editbox_background_normal_blue=0x7f020019;
+        public static final int gst_sdk_icon=0x7f02001a;
+        public static final int ic_launcher=0x7f02001b;
+        public static final int ip_field=0x7f02001c;
+        public static final int left=0x7f02001d;
+        public static final int orientation=0x7f02001e;
+        public static final int pibot=0x7f02001f;
+        public static final int right=0x7f020020;
+        public static final int rotate_left=0x7f020021;
+        public static final int rotate_right=0x7f020022;
+        public static final int stop=0x7f020023;
+        public static final int stop_button=0x7f020024;
+        public static final int stop_on=0x7f020025;
+        public static final int up=0x7f020026;
+        public static final int upleft=0x7f020027;
+        public static final int upright=0x7f020028;
+        public static final int zwartevilt=0x7f020029;
     }
     public static final class id {
-        public static final int backwardButton=0x7f070001;
-        public static final int changeHandButton=0x7f07000a;
-        public static final int driftBackLeftButton=0x7f070005;
-        public static final int driftBackRightButton=0x7f070004;
-        public static final int driftLeftButton=0x7f070007;
-        public static final int driftRightButton=0x7f070009;
-        public static final int edit_message=0x7f070000;
-        public static final int forwardButton=0x7f070003;
-        public static final int leftButton=0x7f070008;
-        public static final int rightButton=0x7f070006;
-        public static final int stopButton=0x7f070002;
-        public static final int surface_video=0x7f07000b;
+        public static final int backwardButton=0x7f070002;
+        public static final int changeHandButton=0x7f07000b;
+        public static final int driftBackLeftButton=0x7f070006;
+        public static final int driftBackRightButton=0x7f070005;
+        public static final int driftLeftButton=0x7f070008;
+        public static final int driftRightButton=0x7f07000a;
+        public static final int edit_message=0x7f070001;
+        public static final int forwardButton=0x7f070004;
+        public static final int leftButton=0x7f070009;
+        public static final int logoPiBot=0x7f070000;
+        public static final int rightButton=0x7f070007;
+        public static final int stopButton=0x7f070003;
+        public static final int surface_video=0x7f07000c;
     }
     public static final class layout {
         public static final int activity_address=0x7f030000;
@@ -55,21 +79,22 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050000;
-        public static final int backward=0x7f050006;
+        public static final int backward=0x7f050007;
         public static final int button_send=0x7f050003;
         public static final int change_hand=0x7f050004;
         public static final int defaultHostName=0x7f050002;
-        public static final int driftBackLeft=0x7f05000b;
-        public static final int driftBackRight=0x7f05000a;
-        public static final int driftLeft=0x7f05000c;
-        public static final int driftRight=0x7f05000d;
+        public static final int driftBackLeft=0x7f05000c;
+        public static final int driftBackRight=0x7f05000b;
+        public static final int driftLeft=0x7f05000d;
+        public static final int driftRight=0x7f05000e;
         public static final int edit_message=0x7f050001;
-        public static final int forward=0x7f050005;
-        public static final int left=0x7f050007;
-        public static final int right=0x7f050008;
-        public static final int rotateLeft=0x7f05000e;
-        public static final int rotateRight=0x7f05000f;
-        public static final int stop=0x7f050009;
+        public static final int forward=0x7f050006;
+        public static final int left=0x7f050008;
+        public static final int pibot=0x7f050005;
+        public static final int right=0x7f050009;
+        public static final int rotateLeft=0x7f05000f;
+        public static final int rotateRight=0x7f050010;
+        public static final int stop=0x7f05000a;
     }
     public static final class style {
         /** 
