@@ -2,27 +2,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:background="@drawable/zwartevilt" >
     
-    <EditText android:id="@+id/edit_message"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:hint="@string/edit_message"
-        android:inputType="phone"
-        android:background="@drawable/ip_field"
-        android:textColor="@color/Neon" />
+    <RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dip"
+	    android:layout_weight="1">
+	   	<ImageView
+	   	    android:id="@+id/logoPiBot"
+	   	    android:layout_width="wrap_content"
+	   	    android:layout_height="wrap_content"
+	   	    android:layout_centerInParent="true"
+	   	    android:contentDescription="@string/pibot"
+	   	    android:src="@drawable/pibot" />
+	</RelativeLayout>
     
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_send"
-        android:contentDescription="@string/button_send"
-        android:src="@drawable/connect"
-        android:layout_marginTop="100dp"
-        android:onClick="launch"
-        android:background="@null" />
+    
+   	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="0dip"
+	    android:orientation="horizontal"
+	    android:layout_weight="1"
+	     >
+	    
+	    <EditText android:id="@+id/edit_message"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:hint="@string/edit_message"
+	        android:inputType="phone"
+	        android:background="@drawable/ip_field"
+	        android:textColor="@color/Neon" />
+	    
+	    <ImageButton
+	        android:layout_toRightOf="@id/edit_message"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/button_send"
+	        android:contentDescription="@string/button_send"
+	        android:src="@drawable/connection"
+	        android:onClick="launch"
+	        android:background="@null" />
+	
+	</RelativeLayout>
+
 
 </LinearLayout>

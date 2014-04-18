@@ -8,6 +8,8 @@
     
     <string name="change_hand">Change Hand</string>
     
+    <string name="pibot">Logo PiBot</string>
+    
     <string name="forward">Forward</string>
     <string name="backward">Backward</string>
     <string name="left">Left</string>

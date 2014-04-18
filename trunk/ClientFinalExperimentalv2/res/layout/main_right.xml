@@ -26,7 +26,7 @@
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/backward"
             android:onClick="driveBackward"
-            android:src="@drawable/arrow_down"
+            android:src="@drawable/down"
             android:background="@null" />
 
         <ImageButton
@@ -38,7 +38,7 @@
             android:layout_centerVertical="true"
             android:contentDescription="@string/stop"
             android:longClickable="true"
-            android:src="@drawable/stop"
+            android:src="@drawable/stop_button"
             android:text="@string/stop"
             android:background="@null" />
 
@@ -50,7 +50,7 @@
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/forward"
             android:onClick="driveForward"
-            android:src="@drawable/arrow_up"
+            android:src="@drawable/up"
             android:background="@null" />
 
         <ImageButton
@@ -61,7 +61,7 @@
             android:layout_toRightOf="@id/backwardButton"
             android:contentDescription="@string/driftBackRight"
             android:onClick="driftBackRight"
-            android:src="@drawable/arrow_downright"
+            android:src="@drawable/downright"
             android:text="@string/driftBackRight"
             android:background="@null" />
 
@@ -73,7 +73,7 @@
             android:layout_toLeftOf="@id/backwardButton"
             android:contentDescription="@string/driftBackLeft"
             android:onClick="driftBackLeft"
-            android:src="@drawable/arrow_downleft"
+            android:src="@drawable/downleft"
             android:text="@string/driftBackLeft"
             android:background="@null" />
 
@@ -85,7 +85,7 @@
             android:layout_toRightOf="@id/stopButton"
             android:contentDescription="@string/right"
             android:onClick="rotateRight"
-            android:src="@drawable/arrow_right"
+            android:src="@drawable/right"
             android:text="@string/right"
             android:background="@null" />
 
@@ -97,7 +97,7 @@
             android:layout_alignLeft="@+id/leftButton"
             android:contentDescription="@string/driftLeft"
             android:onClick="turnLeft"
-            android:src="@drawable/arrow_upleft"
+            android:src="@drawable/upleft"
             android:text="@string/driftLeft"
             android:background="@null" />
 
@@ -111,7 +111,7 @@
             android:layout_toLeftOf="@id/stopButton"
             android:contentDescription="@string/left"
             android:onClick="rotateLeft"
-            android:src="@drawable/arrow_left"
+            android:src="@drawable/left"
             android:text="@string/left"
             android:background="@null" />
 
@@ -123,7 +123,7 @@
             android:layout_alignLeft="@+id/rightButton"
             android:contentDescription="@string/driftRight"
             android:onClick="turnRight"
-            android:src="@drawable/arrow_upright"
+            android:src="@drawable/upright"
             android:text="@string/driftRight"
             android:background="@null" />
         
@@ -134,7 +134,7 @@
             android:layout_centerHorizontal="true"
             android:text="@string/change_hand"
             android:contentDescription="@string/change_hand"
-            android:src="@drawable/change_orientation"
+            android:src="@drawable/orientation"
             android:layout_marginBottom="20dip"
             android:onClick="changeLayout"
             android:background="@null"/>
