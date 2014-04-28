@@ -40,22 +40,21 @@ public final class R {
         public static final int downright=0x7f020017;
         public static final int editbox_background_focus_blue=0x7f020018;
         public static final int editbox_background_normal_blue=0x7f020019;
-        public static final int gst_sdk_icon=0x7f02001a;
-        public static final int ic_launcher=0x7f02001b;
-        public static final int ip_field=0x7f02001c;
-        public static final int left=0x7f02001d;
+        public static final int ic_launcher=0x7f02001a;
+        public static final int ip_field=0x7f02001b;
+        public static final int left=0x7f02001c;
+        public static final int logo=0x7f02001d;
         public static final int orientation=0x7f02001e;
-        public static final int pibot=0x7f02001f;
-        public static final int right=0x7f020020;
-        public static final int rotate_left=0x7f020021;
-        public static final int rotate_right=0x7f020022;
-        public static final int stop=0x7f020023;
-        public static final int stop_button=0x7f020024;
-        public static final int stop_on=0x7f020025;
-        public static final int up=0x7f020026;
-        public static final int upleft=0x7f020027;
-        public static final int upright=0x7f020028;
-        public static final int zwartevilt=0x7f020029;
+        public static final int right=0x7f02001f;
+        public static final int rotate_left=0x7f020020;
+        public static final int rotate_right=0x7f020021;
+        public static final int stop=0x7f020022;
+        public static final int stop_button=0x7f020023;
+        public static final int stop_on=0x7f020024;
+        public static final int up=0x7f020025;
+        public static final int upleft=0x7f020026;
+        public static final int upright=0x7f020027;
+        public static final int zwartevilt=0x7f020028;
     }
     public static final class id {
         public static final int backwardButton=0x7f070002;
@@ -90,7 +89,7 @@ public final class R {
         public static final int edit_message=0x7f050001;
         public static final int forward=0x7f050006;
         public static final int left=0x7f050008;
-        public static final int pibot=0x7f050005;
+        public static final int logopibot=0x7f050005;
         public static final int right=0x7f050009;
         public static final int rotateLeft=0x7f05000f;
         public static final int rotateRight=0x7f050010;
