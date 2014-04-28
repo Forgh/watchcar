@@ -9,13 +9,14 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="0dip"
 	    android:layout_weight="1">
-	   	<ImageView
+	    <ImageView
 	   	    android:id="@+id/logoPiBot"
 	   	    android:layout_width="wrap_content"
 	   	    android:layout_height="wrap_content"
 	   	    android:layout_centerInParent="true"
-	   	    android:contentDescription="@string/pibot"
-	   	    android:src="@drawable/pibot" />
+	   	    android:contentDescription="@string/logopibot"
+	   	    android:src="@drawable/logo" />
+
 	</RelativeLayout>
     
     
@@ -29,6 +30,7 @@
 	    <EditText android:id="@+id/edit_message"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_marginTop="60dip"
 	        android:hint="@string/edit_message"
 	        android:inputType="phone"
 	        android:background="@drawable/ip_field"
@@ -38,6 +40,7 @@
 	        android:layout_toRightOf="@id/edit_message"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+	        android:layout_marginTop="60dip"
 	        android:text="@string/button_send"
 	        android:contentDescription="@string/button_send"
 	        android:src="@drawable/connection"
