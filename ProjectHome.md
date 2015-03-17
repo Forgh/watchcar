@@ -1,0 +1,1 @@
+Student project to control a robot and see what he could see using android, raspberry pi, netduino and web user interface (J2EE)
